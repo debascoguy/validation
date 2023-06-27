@@ -1,26 +1,26 @@
 <?php
-namespace Emma\Validation;
+namespace Emma\Validation\Error;
 
 /**
  * @Author: Ademola Aina
  * Email: debascoguy@gmail.com
  */
-class FormError
+class ValidationError
 {
     /**
      * @var string
      */
-    protected string $fieldName;
+    protected string $fieldName = "";
 
     /**
      * @var string
      */
-    protected string $errorMessage;
+    protected string $errorMessage = "";
 
     /**
-     * @var object|string
+     * @var string
      */
-    protected object|string $validator;
+    protected string $validator = "";
 
 
     /**
@@ -28,9 +28,9 @@ class FormError
      * @param string $errorMessage;
      * @param string $validator;
      */
-    public function __construct(string $fieldName, string $errorMessage, object|string $validator)
+    public static function create(string $fieldName, string $errorMessage, string $validator): static
     {
-        $this->setFieldName($fieldName)->setErrorMessage($errorMessage)->setValidator($validator);
+        return (new self())->setFieldName($fieldName)->setErrorMessage($errorMessage)->setValidator($validator);
     }
 
     /**
@@ -43,7 +43,7 @@ class FormError
 
     /**
      * @param string $fieldName
-     * @return static
+     * @return ValidationError
      */
     public function setFieldName(string $fieldName): static
     {
@@ -61,7 +61,7 @@ class FormError
 
     /**
      * @param string $errorMessage
-     * @return static
+     * @return ValidationError
      */
     public function setErrorMessage(string $errorMessage): static
     {
@@ -70,18 +70,18 @@ class FormError
     }
 
     /**
-     * @return object|string
+     * @return string
      */
-    public function getValidator(): object|string
+    public function getValidator(): string
     {
         return $this->validator;
     }
 
     /**
-     * @param object|string $validator
-     * @return static
+     * @param string $validator
+     * @return ValidationError
      */
-    public function setValidator(object|string $validator): static
+    public function setValidator(string $validator): static
     {
         $this->validator = $validator;
         return $this;
