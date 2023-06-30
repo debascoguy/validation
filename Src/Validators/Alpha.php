@@ -17,7 +17,7 @@ class Alpha extends Pattern
         protected bool $allowEmpty = false,
         public string $errorMessage = "For [fieldName] - Only characters A through Z are allowed!")
     {
-        parent::__construct($this->errorMessage);
+        parent::__construct($this->regex, $this->allowEmpty, $this->errorMessage);
     }
 
 }

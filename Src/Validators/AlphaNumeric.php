@@ -17,7 +17,7 @@ class AlphaNumeric extends Pattern
         protected bool $allowEmpty = false,
         public string $errorMessage = "For [fieldName] - Only a-z, 0-9, -, ., _ and space character allowed!")
     {
-        parent::__construct($this->errorMessage);
+        parent::__construct($this->regex, $this->allowEmpty, $this->errorMessage);
     }
 
 }
