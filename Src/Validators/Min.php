@@ -8,10 +8,10 @@ use Attribute;
 class Min extends AbstractValidator
 {
     /**
-     * @param int $maxValue
+     * @param int $minValue
      * @param string $errorMessage
      */
-    public function __construct(protected int $maxValue, public string $errorMessage = "Minimum size for [fieldName] is [size]. Supplied value size is not a valid!")
+    public function __construct(protected int $minValue, public string $errorMessage = "Minimum size for [fieldName] is [size]. Supplied value size is not a valid!")
     {
         parent::__construct($this->errorMessage);
     }
@@ -25,7 +25,7 @@ class Min extends AbstractValidator
     {
         $this->errorMessage = str_replace("[size]", $context["size"], $this->errorMessage);
 
-        if ($value < $this->maxValue) {
+        if ($value < $this->minValue) {
             $this->setDefaultErrorMessage(__CLASS__ . "::" . __METHOD__);
             return false;
         }

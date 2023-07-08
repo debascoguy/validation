@@ -8,9 +8,9 @@ use Attribute;
 class ContainsSpecialCharacter extends Pattern
 {
     public function __construct(
-        protected string $regex = '/[!@#$%^&*()\-_=+{};:,<.>]/',
+        public string $errorMessage = "[fieldName] should contain at least a one of the special character (!@#$%^&*()\-_=+{};:,<.>)!",
         protected bool $allowEmpty = false,
-        public string $errorMessage = "[fieldName] should contain at least a one of the special character (!@#$%^&*()\-_=+{};:,<.>)!"
+        protected string $regex = '/[!@#$%^&*()\-_=+{};:,<.>]/'
     ) {
         parent::__construct($this->regex, $this->allowEmpty, $this->errorMessage);
     }

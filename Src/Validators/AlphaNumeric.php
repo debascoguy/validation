@@ -13,10 +13,10 @@ class AlphaNumeric extends Pattern
      * @param string $errorMessage
      */
     public function __construct(
-        protected string $regex = '/^[a-z0-9\-\.\_\,]*$/i',
-        protected bool $allowEmpty = false,
-        public string $errorMessage = "For [fieldName] - Only a-z, 0-9, -, ., _ and space character allowed!")
-    {
+        public string $errorMessage = "For [fieldName] - Only a-z, 0-9, -, ., _, @ and space character allowed!",
+        protected string $regex = '/^[a-z0-9\-\.\_\,\@]*$/i',
+        protected bool $allowEmpty = false
+    ) {
         parent::__construct($this->regex, $this->allowEmpty, $this->errorMessage);
     }
 

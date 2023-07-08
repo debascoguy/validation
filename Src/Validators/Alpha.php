@@ -13,10 +13,10 @@ class Alpha extends Pattern
      * @param string $errorMessage
      */
     public function __construct(
+        public string $errorMessage = "For [fieldName] - Only characters A through Z are allowed!",
         protected string $regex = '/^[a-z]*$/i',
-        protected bool $allowEmpty = false,
-        public string $errorMessage = "For [fieldName] - Only characters A through Z are allowed!")
-    {
+        protected bool $allowEmpty = false
+    ) {
         parent::__construct($this->regex, $this->allowEmpty, $this->errorMessage);
     }
 

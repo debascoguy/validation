@@ -10,8 +10,8 @@ class ContainsLowerCase extends Pattern
     protected string $regex = '/[a-z]/';
 
     public function __construct(
-        protected bool $allowEmpty = false,
-        public string $errorMessage = "[fieldName] should contain at least a lower case letter (e.g: a...z)!"
+        public string $errorMessage = "[fieldName] should contain at least a lower case letter (e.g: a...z)!",
+        protected bool $allowEmpty = false
     ) {
         parent::__construct($this->regex, $this->allowEmpty, $this->errorMessage);
     }

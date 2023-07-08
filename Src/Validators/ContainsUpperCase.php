@@ -10,8 +10,8 @@ class ContainsUpperCase extends Pattern
     protected string $regex = '/[A-Z]/';
 
     public function __construct(
-        protected bool $allowEmpty = false,
-        public string $errorMessage = "[fieldName] should contain at least 1 upper case letter (e.g: A...Z)!"
+        public string $errorMessage = "[fieldName] should contain at least 1 upper case letter (e.g: A...Z)!",
+        protected bool $allowEmpty = false
     ) {
         parent::__construct($this->regex, $this->allowEmpty, $this->errorMessage);
     }

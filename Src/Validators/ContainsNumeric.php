@@ -10,8 +10,8 @@ class ContainsNumeric extends Pattern
     protected string $regex = '/[0-9]/';
 
     public function __construct(
-        protected bool $allowEmpty = false,
-        public string $errorMessage = "[fieldName] should contain at least 1 number (e.g: 0 - 9)!"
+        public string $errorMessage = "[fieldName] should contain at least 1 number (e.g: 0 - 9)!",
+        protected bool $allowEmpty = false
     ) {
         parent::__construct($this->regex, $this->allowEmpty, $this->errorMessage);
     }
