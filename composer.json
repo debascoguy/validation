@@ -1,6 +1,6 @@
 {
     "name": "emma/validation",
-    "description": "A PHP 8.2+ Attribute Based Valdiation For Properties of Object/Entity/DTO. Comes with in-built data-type converter that can be implmented to make validation easy without compromising your object. You can create your own custom Validators and/or Converter by implmenting a simple interface.",
+    "description": "A PHP 8.0+ Attribute Based Validation For Properties of Object/Entity/DTO. Comes with in-built data-type converter that can be implemented to make validation easy without compromising your object. You can create your own custom Validators and/or Converter by implementing a simple interface.",
     "authors": [
         {
             "name": "Ademola Aina",
@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=8.2",
-        "emma/common": "^1.1.4"
+        "emma/common": "^1.0.2"
     },
     "autoload": {
         "psr-4": {
