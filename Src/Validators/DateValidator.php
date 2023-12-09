@@ -23,7 +23,7 @@ class DateValidator extends AbstractValidator
      */
     public function validate(mixed $value, array $context = []): bool
     {
-        if (DateTimeUtils::isValidDate($value)) {
+        if (!DateTimeUtils::isValidDate($value)) {
             $this->setDefaultErrorMessage(__CLASS__ . "::" . __METHOD__);
             return false;
         }

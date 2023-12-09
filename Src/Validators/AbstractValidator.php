@@ -9,7 +9,7 @@ abstract class AbstractValidator implements ValidatorInterface
 {
     private ?ValidationError $validationError = null;
 
-    private string $fieldName;
+    private ?string $fieldName = null;
 
     public function __construct(public string $errorMessage = "[fieldName] can not be null!")
     {

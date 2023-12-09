@@ -36,6 +36,23 @@ class Password extends AbstractValidator
      */
     public function validate(mixed $value, array $context = []): bool
     {
+        $fieldName = $this->getFieldName();
+        if ($this->containsUpperCase) 
+        {
+            $this->containsUpperCase->setFieldName($fieldName);
+        }
+        if ($this->containsLowerCase) 
+        {
+            $this->containsLowerCase->setFieldName($fieldName);
+        }
+        if ($this->containsNumeric) 
+        {
+            $this->containsNumeric->setFieldName($fieldName);
+        }
+        if ($this->containsSpecialCharacter) 
+        {
+            $this->containsSpecialCharacter->setFieldName($fieldName);
+        }
         if ($this->containsUpperCase && !$this->containsUpperCase->validate($value, $context)) {
             $this->errorMessage = $this->containsUpperCase->errorMessage;
             $this->setError($this->containsUpperCase->getError());
