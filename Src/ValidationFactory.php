@@ -40,6 +40,6 @@ class ValidationFactory extends ObjectFactory implements ValidationInterface
     public static function validate(object $entity): ArrayIterator
     {
         $self = new self();
-        return $self->validateObject($entity);
+        return $self->make()->validateObject($entity);
     }
 }
